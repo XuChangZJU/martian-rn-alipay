@@ -1,3 +1,5 @@
 rootProject.name = 'Example'
 
 include ':app'
+include ':martian-rn-alipay'
+project(':martian-rn-alipay').projectDir = new File(rootProject.projectDir, '../node_modules/martian-rn-alipay/android')
