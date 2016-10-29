@@ -1,4 +1,4 @@
-package com.alipay;
+package com.martianLife.rnAlipay;
 
 public final class Base64 {
 

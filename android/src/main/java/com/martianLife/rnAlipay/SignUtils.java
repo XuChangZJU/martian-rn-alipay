@@ -1,4 +1,4 @@
-package com.alipay;
+package com.martianLife.rnAlipay;
 
 import java.security.KeyFactory;
 import java.security.PrivateKey;
