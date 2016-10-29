@@ -1,4 +1,4 @@
-package com.alipay;
+package com.martianLife.rnAlipay;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

@@ -1,4 +1,4 @@
-package com.alipay;
+package com.martianLife.rnAlipay;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
