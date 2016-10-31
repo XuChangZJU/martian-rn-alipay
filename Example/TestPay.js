@@ -23,7 +23,14 @@ export default class TestPay extends Component {
                         res.text()
                             .then(
                                 (text) => {
-                                    console.warn(text);
+                                    Alipay.pay({
+                                        orderInfo: text
+                                    })
+                                        .then(
+                                            (result) => {
+                                                console.log(result);
+                                            }
+                                        )
                                 }
                             );
                     }
