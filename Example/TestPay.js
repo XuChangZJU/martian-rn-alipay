@@ -11,15 +11,25 @@ import {
     TextInput,
 } from 'react-native';
 import Alipay from 'martian-rn-alipay';
-import { signOrderString } from './sign'
+
+const url = "http://10.214.147.155:2005";
 export default class TestPay extends Component {
+
     goAlipay () {
-        let string = signOrderString(this.state.text);
-        Alipay.pay(string).then((msg) => {
-            console.log(msg);
-        }, (e) => {
-            console.log(e);
-        });
+        if(this.state && this.state.text && parseInt(this.state.text) !== NaN) {
+            fetch(url + `?totalAmount=${this.state.text}`)
+                .then(
+                    (res) => {
+                        console.warn(res);
+                    }
+                )
+                .catch(
+                    console.warn
+                );
+        }
+        else {
+            alert("请输入合法的金额")
+        }
     }
     render() {
         return (
@@ -33,7 +43,7 @@ export default class TestPay extends Component {
                 <TextInput  
                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}  
                    onChangeText={(text) => this.setState({text})}  
-                   value={this.state.text}  
+                   value={this.state && this.state.text}
                  /> 
                 <TouchableOpacity
                     style={styles.button}
