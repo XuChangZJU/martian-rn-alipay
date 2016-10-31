@@ -33,23 +33,19 @@ const blzContent = {
  * @param totalAmount
  * @returns {Promise}
  */
-function signOrderString(totalAmount, constOrder, is_encode) {
-    const OrderString = "";
+function signOrderString(totalAmount) {
+    let OrderString = "";
     const items = [];
     const constOrderArray = keys(constOrder).sort();
     return new Promise(
         (resolve, reject) => {
             constOrderArray.forEach((ele, index) => {
                 // 需要url_encode,即escape
-                if(is_encode) {
-                    items.push( ele.toString() + "=" + escape(constOrderArray[ele].toString()) );
-                } else {
-                    items.push( ele.toString() + "=" + constOrderArray[ele].toString());
-                }
+                items.push( ele.toString() + "=" + escape(constOrderArray[ele].toString()) );
     })
     }
     )
-    OrderString = items.join("&")
+    OrderString = items.join("&");
 }
 
 module.exports = {
