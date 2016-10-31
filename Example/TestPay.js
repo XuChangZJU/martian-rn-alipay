@@ -8,19 +8,18 @@ import {
     Text,
     View,
     TouchableOpacity,
+    TextInput,
 } from 'react-native';
 import Alipay from 'martian-rn-alipay';
 import { signOrderString } from './sign'
 export default class TestPay extends Component {
     goAlipay () {
-     let string = signOrderString(a,b,c);
-     console.log(string);
-    const data = "";
-    Alipay.pay(data).then((msg) => {
-        console.log(msg);
-    }, (e) => {
-        console.log(e);
-    });
+        let string = signOrderString(this.state.text);
+        Alipay.pay(string).then((msg) => {
+            console.log(msg);
+        }, (e) => {
+            console.log(e);
+        });
     }
     render() {
         return (
@@ -31,6 +30,11 @@ export default class TestPay extends Component {
                 <Text style={styles.instructions}>
                     具体参数请在页面中配置
                 </Text>
+                <TextInput  
+                   style={{height: 40, borderColor: 'gray', borderWidth: 1}}  
+                   onChangeText={(text) => this.setState({text})}  
+                   value={this.state.text}  
+                 /> 
                 <TouchableOpacity
                     style={styles.button}
                     onPress={this.goAlipay.bind(this)}>
