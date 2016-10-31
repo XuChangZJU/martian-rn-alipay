@@ -27,10 +27,11 @@ export default class TestPay extends Component {
                                         orderInfo: text
                                     })
                                         .then(
-                                            (result) => {
-                                                console.log(result);
-                                            }
+                                            console.log
                                         )
+                                        .catch(
+                                            console.warn
+                                        );
                                 }
                             );
                     }

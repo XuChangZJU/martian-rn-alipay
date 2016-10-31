@@ -12,7 +12,7 @@ http.createServer(function(req, res) {
     try {
         if(query && query.totalAmount && !isNaN(parseInt(query.totalAmount))) {
             res.writeHead(200, {'Content-Type': 'text/plain'});
-            const orderInfo = JSON.stringify(sign.signOrderString(query.totalAmount));
+            const orderInfo = sign.signOrderString(query.totalAmount);
             console.log(`orderInfo:${orderInfo}`);
             res.write(orderInfo);
             res.end();
