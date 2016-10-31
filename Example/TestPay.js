@@ -14,13 +14,12 @@ import Alipay from 'martian-rn-alipay';
 import { signOrderString } from './sign'
 export default class TestPay extends Component {
     goAlipay () {
-     let string = signOrderString(this.state.text);
-    const data = "";
-    Alipay.pay(data).then((msg) => {
-        console.log(msg);
-    }, (e) => {
-        console.log(e);
-    });
+        let string = signOrderString(this.state.text);
+        Alipay.pay(string).then((msg) => {
+            console.log(msg);
+        }, (e) => {
+            console.log(e);
+        });
     }
     render() {
         return (

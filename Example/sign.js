@@ -41,7 +41,7 @@ function signOrderString(totalAmount) {
         (resolve, reject) => {
             constOrderArray.forEach((ele, index) => {
                 // 需要url_encode,即escape
-                items.push( ele.toString() + "=" + escape(constOrderArray[ele].toString()) );
+                items.push( ele.toString() + "=" + escape(constOrderArray[ele].toString()));
     })
     }
     )
