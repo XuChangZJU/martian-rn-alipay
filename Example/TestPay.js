@@ -20,7 +20,7 @@ export default class TestPay extends Component {
             fetch(url + `?totalAmount=${this.state.text}`)
                 .then(
                     (res) => {
-                        res.body.text()
+                        res.text()
                             .then(
                                 (text) => {
                                     console.warn(text);
