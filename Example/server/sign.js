@@ -59,7 +59,8 @@ function signOrderString(totalAmount) {
     signMethod.end();
     const sign = signMethod.sign(privateKey.privateKey, "base64");
     orderString += `&sign=${sign}`;
-    return(orderString);
+    orderString = encodeURIComponent(orderString);
+    return orderString;
 }
 
 module.exports = {

@@ -20,7 +20,12 @@ export default class TestPay extends Component {
             fetch(url + `?totalAmount=${this.state.text}`)
                 .then(
                     (res) => {
-                        console.warn(res);
+                        res.body.text()
+                            .then(
+                                (text) => {
+                                    console.warn(text);
+                                }
+                            );
                     }
                 )
                 .catch(
@@ -40,27 +45,56 @@ export default class TestPay extends Component {
                 <Text style={styles.instructions}>
                     具体参数请在页面中配置
                 </Text>
-                <TextInput  
-                   style={{height: 40, borderColor: 'gray', borderWidth: 1}}  
-                   onChangeText={(text) => this.setState({text})}  
-                   value={this.state && this.state.text}
-                 /> 
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={this.goAlipay.bind(this)}>
-                    <Text style={styles.buttonText}>去支付</Text>
-                </TouchableOpacity>
+                <View
+                    style={styles.inputBox}
+                >
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            ref="inputText"
+                            // keyboardShouldPersistTaps={false}
+                            // onEndEditing={() => {}}
+                            multiline={true}
+                            onChangeText={(text) => this.setState({ text })}
+                            style={[styles.replyText, styles.replyTextTwo]}
+                            defaultValue={this.state && this.state.text || undefined}
+                            underlineColorAndroid="transparent"
+                            placeholder="请输入总金额"
+                            keyboardType='numeric'
+                        />
+                    </View>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={this.goAlipay.bind(this)}>
+                        <Text style={styles.buttonText}>去支付</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    replyBox: {
+        alignItems: 'flex-end',
+    },
+    inputBox: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        borderTopWidth: 1,
+        borderTopColor: 'whitesmoke',
+        paddingRight: 13,
+        paddingLeft: 13,
+    },
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
+    },
+    replyTextTwo: {
+        height: 50,
     },
     welcome: {
         fontSize: 20,

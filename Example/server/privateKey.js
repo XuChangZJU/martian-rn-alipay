@@ -2,7 +2,7 @@
  * Created by Administrator on 2016/10/31.
  */
 module.exports = {
-    app_id: "APP_ID",
+    app_id: "2016101202120258",
     privateKey: "-----BEGIN RSA PRIVATE KEY-----\n" +
     "MIICXQIBAAKBgQDQvEAeJr0b4SZavTqmupBNO3BPA8F4IVGh9X+84OS5ycym0JcW\n" +
     "F3um9KSHCwhG6/edoq77nOiv1oyMQwr4okiSxsvQAuspMmz1tHY2H/9tao8Kod3E\n" +
