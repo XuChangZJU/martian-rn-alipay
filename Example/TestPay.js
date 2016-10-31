@@ -7,22 +7,35 @@ import {
     StyleSheet,
     Text,
     View,
+    TouchableOpacity,
 } from 'react-native';
-
+import Alipay from 'martian-rn-alipay';
+import { signOrderString } from './sign'
 export default class TestPay extends Component {
+    goAlipay () {
+     let string = signOrderString(a,b,c);
+     console.log(string);
+    const data = "";
+    Alipay.pay(data).then((msg) => {
+        console.log(msg);
+    }, (e) => {
+        console.log(e);
+    });
+    }
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Welcome to React Native!
+                    点击进入支付宝支付
                 </Text>
                 <Text style={styles.instructions}>
-                    To get started, edit index.android.js
+                    具体参数请在页面中配置
                 </Text>
-                <Text style={styles.instructions}>
-                    Double tap R on your keyboard to reload,{'\n'}
-                    Shake or press menu button for dev menu
-                </Text>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={this.goAlipay.bind(this)}>
+                    <Text style={styles.buttonText}>去支付</Text>
+                </TouchableOpacity>
             </View>
         );
     }
