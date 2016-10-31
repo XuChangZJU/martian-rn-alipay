@@ -36,7 +36,7 @@ const privateKey = require("./privateKey");
  * @returns {Promise}
  */
 function signOrderString(totalAmount) {
-    let orderString = "";
+    let stringToSign = "";
     const bizContent2 = assign({}, bizContent, {
         total_amount: totalAmount,
     })
@@ -45,21 +45,32 @@ function signOrderString(totalAmount) {
         app_id: privateKey.app_id,
     });
     const constOrderArray = keys(constOrder2).sort();
-    constOrderArray.forEach((ele, index) => {
-        if(index > 0) {
-            orderString += "&";
+    constOrderArray.forEach((ele, idx) => {
+        if(idx > 0) {
+            stringToSign += "&";
         }
-        orderString += ele;
-        orderString += "=";
-        orderString += constOrder2[ele];
+        stringToSign += ele;
+        stringToSign += "=";
+        stringToSign += constOrder2[ele];
     });
 
     const signMethod = crypto.createSign('RSA-SHA1');
-    signMethod.write(orderString);
+    signMethod.write(stringToSign);
     signMethod.end();
     const sign = signMethod.sign(privateKey.privateKey, "base64");
+
+    let orderString = "";
+    constOrderArray.forEach(
+        (ele, idx) => {
+            if(idx > 0) {
+                orderString += "&";
+            }
+            orderString += ele;
+            orderString += "=";
+            orderString += encodeURIComponent(constOrder2[ele]);
+        }
+    );
     orderString += `&sign=${sign}`;
-    orderString = encodeURIComponent(orderString);
     return orderString;
 }
 
