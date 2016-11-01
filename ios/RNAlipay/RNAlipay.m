@@ -3,7 +3,7 @@
 #import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
 
-@implementation RNAlipay
+@implementation MartianRnAlipay
 
 RCT_EXPORT_MODULE();
 
