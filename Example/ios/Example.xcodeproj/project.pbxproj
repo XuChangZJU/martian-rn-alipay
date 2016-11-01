@@ -168,9 +168,9 @@
 			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
 			remoteInfo = "React-tvOS";
 		};
-		EE4BCDEE1DC4511B00208449 /* PBXContainerItemProxy */ = {
+		EE5B4D351DC74DA700472678 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BD72CB2604A646469A5CDF5B /* RNAlipay.xcodeproj */;
+			containerPortal = EE5B4D311DC74DA700472678 /* RNAlipay.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = DB08841C1CE1B68F00A9A358;
 			remoteInfo = RNAlipay;
@@ -200,7 +200,6 @@
 		23ED05479D5845019631EBF0 /* libRNAlipay.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAlipay.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		BD72CB2604A646469A5CDF5B /* RNAlipay.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNAlipay.xcodeproj; path = "../node_modules/martian-rn-alipay/ios/RNAlipay.xcodeproj"; sourceTree = "<group>"; };
 		EE4BCDF81DC4541D00208449 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		EE4BCDFA1DC4542500208449 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		EE4BCDFC1DC4542F00208449 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -216,6 +215,7 @@
 		EE4BCE0F1DC4550D00208449 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = Example/libcrypto.a; sourceTree = "<group>"; };
 		EE4BCE101DC4550D00208449 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = Example/libssl.a; sourceTree = "<group>"; };
 		EE4BCE601DC468FE00208449 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AlipaySDK.bundle; path = Example/AlipaySDK.bundle; sourceTree = "<group>"; };
+		EE5B4D311DC74DA700472678 /* RNAlipay.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAlipay.xcodeproj; path = "../node_modules/martian-rn-alipay/ios/RNAlipay.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +378,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				EE5B4D311DC74DA700472678 /* RNAlipay.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -388,7 +389,6 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				BD72CB2604A646469A5CDF5B /* RNAlipay.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -424,14 +424,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE4BCDCC1DC4511B00208449 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EE4BCDEF1DC4511B00208449 /* libRNAlipay.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		EE4BCDF71DC4541C00208449 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +440,14 @@
 				EE4BCDF81DC4541D00208449 /* libc++.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE5B4D321DC74DA700472678 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B4D361DC74DA700472678 /* libRNAlipay.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,8 +560,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = EE4BCDCC1DC4511B00208449 /* Products */;
-					ProjectRef = BD72CB2604A646469A5CDF5B /* RNAlipay.xcodeproj */;
+					ProductGroup = EE5B4D321DC74DA700472678 /* Products */;
+					ProjectRef = EE5B4D311DC74DA700472678 /* RNAlipay.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -692,11 +692,11 @@
 			remoteRef = EE4BCDEB1DC4511B00208449 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EE4BCDEF1DC4511B00208449 /* libRNAlipay.a */ = {
+		EE5B4D361DC74DA700472678 /* libRNAlipay.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNAlipay.a;
-			remoteRef = EE4BCDEE1DC4511B00208449 /* PBXContainerItemProxy */;
+			remoteRef = EE5B4D351DC74DA700472678 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

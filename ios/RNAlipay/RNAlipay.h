@@ -6,5 +6,5 @@
 #import "RCTBridgeModule.h"
 #import <UIKit/UIKit.h>
 
-@interface RNAlipay : NSObject <RCTBridgeModule>
+@interface MartianRnAlipay : NSObject <RCTBridgeModule>
 @end
