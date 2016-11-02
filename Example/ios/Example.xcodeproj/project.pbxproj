@@ -833,6 +833,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..",
 					"ode_modulesmartian-rn-alipayios/**",
+					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/RNAlipay",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -866,6 +867,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..",
 					"ode_modulesmartian-rn-alipayios/**",
+					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/RNAlipay",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

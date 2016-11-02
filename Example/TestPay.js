@@ -9,10 +9,11 @@ import {
     View,
     TouchableOpacity,
     TextInput,
+    NativeAppEventEmitter,
 } from 'react-native';
 import Alipay from 'martian-rn-alipay';
 
-const url = "http://10.214.147.155:2005";
+const url = "http://192.168.10.110:2005";
 export default class TestPay extends Component {
 
     goAlipay () {
@@ -27,10 +28,14 @@ export default class TestPay extends Component {
                                         orderInfo: text
                                     })
                                         .then(
-                                            console.log
+                                            (result)=>{
+                                                console.log (result);
+            }
                                         )
                                         .catch(
-                                            console.warn
+                                            (err)=>{
+                                            console.log(err)
+            }
                                         );
                                 }
                             );
