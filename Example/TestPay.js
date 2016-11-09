@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Alipay from 'martian-rn-alipay';
 
-const url = "http://192.168.10.110:2005";
+const url = "http://192.168.10.103:2005";
 export default class TestPay extends Component {
 
     goAlipay () {

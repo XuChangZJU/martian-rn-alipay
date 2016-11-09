@@ -1,8 +1,8 @@
 /**
  * Created by Administrator on 2016/10/29.
  */
-const keys = require('lodash/keys');
-const assign = require('lodash/assign');
+// const keys = require('lodash/keys');
+// const assign = require('lodash/assign');
 const crypto = require('crypto');
 
 const bizContent = {
@@ -43,18 +43,18 @@ function generateOutTradeNo ()  {
  */
 function signOrderString(totalAmount) {
     let stringToSign = "";
-    const bizContent2 = assign({}, bizContent, {
+    const bizContent2 = Object.assign({}, bizContent, {
         total_amount: totalAmount,
         out_trade_no: generateOutTradeNo(),
     })
     const now = new Date();
     const timestamp = '2016-07-29 16:55:53';
-    const constOrder2 = assign({}, constOrder, {
+    const constOrder2 = Object.assign({}, constOrder, {
         biz_content: JSON.stringify(bizContent2),
         app_id: privateKey.app_id,
         timestamp,
     });
-    const constOrderArray = keys(constOrder2).sort();
+    const constOrderArray = Object.keys(constOrder2).sort();
     constOrderArray.forEach((ele, idx) => {
         if(idx > 0) {
             stringToSign += "&";
