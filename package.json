@@ -7,6 +7,23 @@
     "android/*",
     "ios/*"
   ],
+  "rnpm": {
+    "ios": {
+      "sharedLibraries": [
+        "libz",
+        "libc++",
+        "CoreTelephony",
+        "SystemConfiguration",
+        "QuartzCore",
+        "CoreText",
+        "CoreGraphics",
+        "UIKit",
+        "Foundation",
+        "CFNetwork",
+        "CoreMotion"
+      ]
+    }
+  },
   "contributors": [
     {
       "name": "Xu Chang",
