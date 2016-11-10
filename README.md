@@ -1,25 +1,31 @@
-# rn-alipay
+# martian-rn-alipay
 react-native 支付宝手机支付模块（杭州码天科技有限公司）
+## Installation
+1. add `"martian-rn-alipay": "XuChangZJU/martian-domain#dev"`to your `package.json`
+2. run `npm install martian-rn-alipay`
+3. run `react-native link`
 
-* 实现参考https://github.com/huangzuizui/rn-alipay
+Now, Android is ready and iOS still need some manual configuration.
+
+###iOS Configuration
+1. Open your app's Xcode project
+2. Drag folder `AlipaySDK` from `node_modules/martian-rn-alipay` into `Frameworks` node in Xcode.  ![](screenshot/step1.png?raw=true)
+3. In the dialogue,make sure `Copy items if need` is **NOT** sticked ![](screenshot/step2.png?raw=true)
+4. Under the "Build Settings" tab of your project configuration, find the "Framework Search Paths" section and edit the value.
+Add a new value, `$(SRCROOT)/../node_modules/martian-rn-alipay/ios` and select `recursive` in the dropdown.![](screenshot/step3.png?raw=true)
+
+It's over
+
+###Usage
+see Example
+
+ 1. make sure the url in `testPay.js` is your ip
+ 2. `npm run startServer`
+ 3. `npm start`  
+Enjoy it 😜
+
+## Referrence
+* [huangzuizui](https://github.com/huangzuizui/rn-alipay)
 
 
 
-在XCode中右击项目的 Libraries 文件夹 ➜ Add Files to
-进入 node_modules ➜ rn-alipay ➜ ios ➜ 选择 RNAlipay.xcodeproj
-展开RNAlipay.xcodeproj➜ Products➜ 添加 libRNAlipay.a 到Build Phases -> Link Binary With Libraries
-在Build Phases选项卡的Link Binary With Libraries中，点击“+”号增加以下依赖：http://www.cocoachina.com/bbs/read.php?tid=335571 
-将RNAlipay.xcodeproj下AlipaySDK.framework、libssl.a、libcrypto.a文件拖入复制到项目文件夹下：iOS
-
-在appdelegate.m 中增加  以下代码
-#import "MartianRnAlipay.h"
-
-
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
-{
-//如果极简开发包不可用,会跳转支付宝钱包进行支付,需要将支付宝钱包的支付结果回传给开 发包
-[MartianRnAlipay aliPayParse:url];
-return YES;
-}
-
-编译运行
