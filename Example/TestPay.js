@@ -14,6 +14,7 @@ import {
 import Alipay from 'martian-rn-alipay';
 
 const url = "http://192.168.10.103:2005";
+// const url = "http://10.180.70.212:2005";
 export default class TestPay extends Component {
 
     goAlipay () {
@@ -29,8 +30,9 @@ export default class TestPay extends Component {
                                     })
                                         .then(
                                             (result)=>{
-                                                console.log (result);
-            }
+                                                console.log(result);
+                                                alert('success!!');
+                                        }
                                         )
                                         .catch(
                                             (err)=>{

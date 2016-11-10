@@ -8,12 +8,13 @@
  */
 
 #import "AppDelegate.h"
-#import <AlipaySDK/AlipaySDK.h>
+#import "MartianRnAlipay.h"
+
 #import "RCTBundleURLProvider.h"
 #import "RCTRootView.h"
-#import "RCTBridge.h"
-#import "RCTEventDispatcher.h"
-#import "MartianRnAlipay.h"
+
+
+
 
 @implementation AppDelegate
 
@@ -39,6 +40,10 @@
   [self.window makeKeyAndVisible];
   return YES;
 }
+
+
+
+
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {

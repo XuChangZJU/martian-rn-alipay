@@ -1,6 +1,6 @@
 #import "MartianRnAlipay.h"
-#import "Order.h"
-#import "DataSigner.h"
+//#import "Order.h"
+//#import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
 static RCTPromiseResolveBlock _resolve;
 static RCTPromiseRejectBlock _reject;

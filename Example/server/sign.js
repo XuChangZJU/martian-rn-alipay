@@ -9,7 +9,7 @@ const bizContent = {
     "timeout_express": "30m",
     "product_code": "QUICK_MSECURITY_PAY",
     "total_amount": "0.01",
-    "subject": "1",
+    "subject": "12",
     "body": "我是测试数据",
     "out_trade_no": "707665424",
     // "total_amount": "10.0",
