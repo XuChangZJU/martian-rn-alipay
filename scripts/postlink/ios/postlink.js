@@ -1,6 +1,6 @@
 var fs = require("fs");
 var glob = require("glob");
-var inquirer = require('inquirer');
+// var inquirer = require('inquirer');
 var path = require("path");
 var plist = require("plist");
 
@@ -40,8 +40,33 @@ if (~appDelegateContents.indexOf(alipayDelegateAssignmentStatement)) {
 }
 
 
+//3. Add custom scheme to plist file
+var parsedInfoPlist = plist.parse(plistContents);
+if (!parsedInfoPlist.CFBundleURLTypes) {
+    parsedInfoPlist.CFBundleURLTypes = [];
+}
+var CFBundleURLTypes = parsedInfoPlist.CFBundleURLTypes;
+
+var hasAlipay = CFBundleURLTypes.find((item) =>
+    item.CFBundleURLName === 'alipay'
+);
+console.log('hasAlipay',hasAlipay);
+if (hasAlipay) {
+    console.log(`"Alipay Scheme" already specified in the plist file.`);
+}
+else {
+    var alipayScheme = {
+        CFBundleTypeRole: 'Editor',
+        CFBundleURLName: 'alipay',
+        CFBundleURLSchemes: [`mt${Math.floor(Math.random()*10000)}`]
+    };
+    parsedInfoPlist.CFBundleURLTypes.push(alipayScheme);
+    plistContents = plist.build(parsedInfoPlist);
+}
+
+
 writePatches();
 function writePatches() {
     fs.writeFileSync(appDelegatePath, appDelegateContents);
-    // fs.writeFileSync(plistPath, plistContents);
+    fs.writeFileSync(plistPath, plistContents);
 }

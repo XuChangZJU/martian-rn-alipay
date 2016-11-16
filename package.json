@@ -6,7 +6,8 @@
     "main.js",
     "android/*",
     "ios/*",
-    "scripts/*"
+    "scripts/*",
+    "README.md"
   ],
   "rnpm": {
     "ios": {
@@ -28,7 +29,7 @@
       "postlink": "node node_modules/martian-rn-alipay/scripts/postlink/run"
     }
   },
-  "contributors": [
+  "maintainers": [
     {
       "name": "Xu Chang",
       "email": "chinawraith@163.com"
