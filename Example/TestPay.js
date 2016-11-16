@@ -32,7 +32,7 @@ export default class TestPay extends Component {
                                         .then(
                                             (result)=>{
                                                 console.log('hh',result);
-                                                alert('success!!');
+                                                alert('done!!');
                                         }
                                         )
                                         .catch(
@@ -45,7 +45,10 @@ export default class TestPay extends Component {
                     }
                 )
                 .catch(
-                    console.warn
+                    (err)=> {
+                        console.warn(err);
+                        alert('sdk error');
+                    }
                 );
         }
         else {

@@ -14,53 +14,65 @@ RCT_REMAP_METHOD(pay, options:(NSDictionary *)options
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
+
     NSArray *urls = [[NSBundle mainBundle] infoDictionary][@"CFBundleURLTypes"];
     NSMutableString *appScheme = [NSMutableString string];
     BOOL multiUrls = [urls count] > 1;
     for (NSDictionary *url in urls) {
         NSArray *schemes = url[@"CFBundleURLSchemes"];
+        NSString *identifier = url[@"CFBundleURLName"];  //alipay
+        //        if ([identifier containsString:@"alipay"]) {
+        //            [appScheme appendString:schemes[0]];
+        //            break;
+        //        }
+
         if (!multiUrls ||
-            (multiUrls && [@"examplePay" isEqualToString:url[@"CFBundleURLName"]])) {
+            (multiUrls && [@"alipay" isEqualToString:identifier])) {
             [appScheme appendString:schemes[0]];
             break;
         }
     }
-    
-    if ([appScheme isEqualToString:@""]) {
-        NSString *error = @"scheme cannot be empty";
-        reject(@"10000", error, [NSError errorWithDomain:error code:10000 userInfo:NULL]);
-        return;
-    }
-    
+
+    NSLog(@"appScheme is%@",appScheme);
+        if ([appScheme isEqualToString:@""]) {
+            NSString *error = @"scheme cannot be empty";
+            reject(@"10000", error, [NSError errorWithDomain:error code:10000 userInfo:NULL]);
+            return;
+        }
+
+
     _resolve = resolve;
     _reject = reject;
     NSString *orderString = [options objectForKey:@"orderInfo"];
-    
+
     [[AlipaySDK defaultService] payOrder:(NSString *)orderString fromScheme:appScheme callback:^(NSDictionary *resultDic){
         NSLog(@"reslut = %@",resultDic);
         [MartianRnAlipay alipayResult:resultDic];
         NSLog(@"orderString = %@", @"支付成功啦啦啦啦！");
+
     }];
 }
 
 + (void)alipayResult:(NSDictionary *)result
 {
-    NSString * resultStatus = [result objectForKey:@"resultStatus"];
-    if([resultStatus isEqualToString:@"6001"])
-    { //用户取消
-        NSLog(@"已取消支付");
-        _resolve(@[result]);
-    }
-    else if ([resultStatus isEqualToString:@"9000"])
-    { //验证签名成功，交易结果无篡改
-        NSLog(@"支付成功");
-        _resolve(@[result]);
-    }
-    else
-    {
-        NSLog(@"支付宝支付失败");
-        _reject(resultStatus, result[@"memo"], [NSError errorWithDomain:result[@"memo"] code:[resultStatus integerValue] userInfo:NULL]);
-    }
+    _resolve(result);
+
+//    NSString * resultStatus = [result objectForKey:@"resultStatus"];
+//    if([resultStatus isEqualToString:@"6001"])
+//    { //用户取消
+//       NSLog(@"已取消支付");
+//        _resolve(@[result]);
+//    }
+//    else if ([resultStatus isEqualToString:@"9000"])
+//    { //验证签名成功，交易结果无篡改
+//        NSLog(@"支付成功");
+//        _resolve(@[result]);
+//    }
+//    else
+//    {
+//        NSLog(@"支付宝支付失败");
+//        _reject(resultStatus, result[@"memo"], [NSError errorWithDomain:result[@"memo"] code:[resultStatus integerValue] userInfo:NULL]);
+//    }
     
     
 }
