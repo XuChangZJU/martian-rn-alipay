@@ -10,5 +10,6 @@
 
 + (void)aliPayParse:(NSURL *)url;
 + (void)alipayResult:(NSDictionary *)result;
++ (void)authV2Parse:(NSURL *)url;
 
 @end

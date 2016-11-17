@@ -101,13 +101,6 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
-		5C5033B11DD47307007BE60E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B003173357434460972CF406 /* RNAlipay.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB08841C1CE1B68F00A9A358;
-			remoteInfo = RNAlipay;
-		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -171,6 +164,13 @@
 			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
 			remoteInfo = "React-tvOS";
 		};
+		EEB49FD31DDDA551009FAF16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BCA9D65D4714D4F8610D12D /* RNAlipay.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB08841C1CE1B68F00A9A358;
+			remoteInfo = RNAlipay;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +197,7 @@
 		22D6F12583064FCC8C2A31BB /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		245AAC02C5514744B4432A6E /* CoreMotion.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		31047205669E4ECF88E986E1 /* CFNetwork.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3BCA9D65D4714D4F8610D12D /* RNAlipay.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNAlipay.xcodeproj; path = "../node_modules/martian-rn-alipay/ios/RNAlipay.xcodeproj"; sourceTree = "<group>"; };
 		3BF97C08CB674764951CB983 /* Foundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		425EAB68BB494DCFB731A9DD /* CoreTelephony.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		44BAF390967E4EBBB1B5BBCF /* libRNAlipay.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAlipay.a; sourceTree = "<group>"; };
@@ -209,7 +210,6 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8E0EB27BAEE94134896F8AB1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A474FAB4528442B3AAFFA6B6 /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		B003173357434460972CF406 /* RNAlipay.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNAlipay.xcodeproj; path = "../node_modules/martian-rn-alipay/ios/RNAlipay.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,14 +354,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5C50339D1DD47307007BE60E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5C5033B21DD47307007BE60E /* libRNAlipay.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5C5033B31DD487F3007BE60E /* AlipaySDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,7 +386,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				B003173357434460972CF406 /* RNAlipay.xcodeproj */,
+				3BCA9D65D4714D4F8610D12D /* RNAlipay.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -447,6 +439,14 @@
 				245AAC02C5514744B4432A6E /* CoreMotion.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEB49FBF1DDDA551009FAF16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEB49FD41DDDA551009FAF16 /* libRNAlipay.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,8 +559,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 5C50339D1DD47307007BE60E /* Products */;
-					ProjectRef = B003173357434460972CF406 /* RNAlipay.xcodeproj */;
+					ProductGroup = EEB49FBF1DDDA551009FAF16 /* Products */;
+					ProjectRef = 3BCA9D65D4714D4F8610D12D /* RNAlipay.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -628,13 +628,6 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5C5033B21DD47307007BE60E /* libRNAlipay.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNAlipay.a;
-			remoteRef = 5C5033B11DD47307007BE60E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -696,6 +689,13 @@
 			fileType = archive.ar;
 			path = "libReact-tvOS.a";
 			remoteRef = EE4BCDEB1DC4511B00208449 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EEB49FD41DDDA551009FAF16 /* libRNAlipay.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNAlipay.a;
+			remoteRef = EEB49FD31DDDA551009FAF16 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -850,6 +850,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..",
 					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
+					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -884,6 +885,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..",
+					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
@@ -951,6 +953,7 @@
 					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
+					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -992,6 +995,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..\node_modulesmartian-rn-alipayios/**",
+					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",
 					"$(SRCROOT)/../node_modules/martian-rn-alipay/ios/**",

@@ -33,6 +33,7 @@ if (~appDelegateContents.indexOf(alipayDelegateAssignmentStatement)) {
 {
   //如果极简开发包不可用,会跳转支付宝钱包进行支付,需要将支付宝钱包的支付结果回传给开 发包
   [MartianRnAlipay aliPayParse:url];
+  [MartianRnAlipay authV2Parse:url];
   return YES;
 }`;
     appDelegateContents = appDelegateContents.replace(appEndStatement,
