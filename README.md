@@ -7,7 +7,7 @@ react-native 支付宝手机支付模块（杭州码天科技有限公司）
 
 Now, Android is ready and iOS still need some manual configuration.
 
-###iOS Configuration
+### iOS Configuration
 1. Open your app's Xcode project
 2. Drag folder `AlipaySDK` from `node_modules/martian-rn-alipay` into `Frameworks` node in Xcode.  ![](screenshot/step1.png?raw=true)
 3. In the dialogue,make sure `Copy items if need` is **NOT** sticked ![](screenshot/step2.png?raw=true)
@@ -16,7 +16,7 @@ Add a new value, `$(SRCROOT)/../node_modules/martian-rn-alipay/ios` and select `
 
 It's over
 
-###Usage
+### Usage
 see Example
 
  1. make sure the url in `testPay.js` is your ip
@@ -24,7 +24,7 @@ see Example
  3. `npm start`  
 Enjoy it 😜
 
-## Referrence
+## References
 * [huangzuizui](https://github.com/huangzuizui/rn-alipay)
 
 
