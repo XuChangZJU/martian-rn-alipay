@@ -33,6 +33,10 @@
     {
       "name": "Xu Chang",
       "email": "chinawraith@163.com"
+    },
+    {
+      "name": "William Ace",
+      "email": "lavystord@gmail.com"
     }
   ],
   "keywords": [
@@ -43,11 +47,10 @@
     "taobao",
     "alibaba",
     "支付宝",
-    "淘宝",
     "支付"
   ],
   "license": "MIT",
   "main": "main.js",
   "nativePackage": true,
-  "version": "1.0.0"
+  "version": "1.1.0"
 }
